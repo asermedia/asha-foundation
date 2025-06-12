@@ -15,13 +15,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         body { font-family: 'Inter', sans-serif; }
-        .hero-bg {
-            background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), 
-                        url('/assets/2.jpeg');
+        .hero-carousel {
+            position: relative;
+            overflow: hidden;
+        }
+        .carousel-slide {
+            display: none;
             background-size: cover;
             background-position: center;
+            min-height: 100vh;
+        }
+        .carousel-slide.active {
+            display: flex;
+        }
+        .carousel-overlay {
+            background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(0,0,0,0.5));
         }
         .card-hover {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -34,6 +47,52 @@
             height: 50px;
             width: auto;
         }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        .carousel-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .carousel-btn.prev {
+            left: 20px;
+        }
+        .carousel-btn.next {
+            right: 20px;
+        }
+        .carousel-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .indicator.active {
+            background: white;
+        }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -42,7 +101,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center space-x-3">
-                    <img src="/assets/logo.jpeg" alt="Asha Foundation Logo" class="logo-img">
+                    <img src="./assets/logo.jpeg" alt="Asha Foundation Logo" class="logo-img">
                     <h1 class="text-2xl font-bold text-blue-800">Asha Foundation</h1>
                 </div>
                 <div class="hidden md:flex space-x-8">
@@ -61,25 +120,86 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-bg min-h-screen flex items-center pt-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
-            <div class="max-w-3xl">
-                <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                   Empowering Communities, Building Futures
-                </h1>
-                <p class="text-xl mb-8 leading-relaxed opacity-90">
-                    We make a difference in the lives of underprivileged communities through education, healthcare, environmental sustainability, and social welfare initiatives.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <button class="bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-700 transition">
-                        Become A Volunteer
-                    </button>
-                    <button class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-gray-900 transition">
-                        Learn More
-                    </button>
+    <!-- Hero Section with Carousel -->
+    <section id="home" class="hero-carousel min-h-screen relative pt-16">
+        <!-- Slide 1 -->
+        <div class="carousel-slide active" style="background-image: url('./assets/2.jpeg');">
+            <div class="carousel-overlay absolute inset-0"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white relative z-10 flex items-center min-h-screen">
+                <div class="max-w-3xl">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                        Your contribution can help achieve a solution
+                    </h1>
+                    <p class="text-xl mb-8 leading-relaxed opacity-90">
+                        We make a difference in the lives of underprivileged communities through education, healthcare, environmental sustainability, and social welfare initiatives.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-700 transition">
+                            Become A Volunteer
+                        </button>
+                        <button class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-gray-900 transition">
+                            Learn More
+                        </button>
+                    </div>
                 </div>
             </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-slide" style="background-image: url('./assets/5.jpeg');">
+            <div class="carousel-overlay absolute inset-0"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white relative z-10 flex items-center min-h-screen">
+                <div class="max-w-3xl">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                        Empowering Through Education
+                    </h1>
+                    <p class="text-xl mb-8 leading-relaxed opacity-90">
+                        Providing quality education and scholarships to 500+ underprivileged children, building a brighter future for our communities.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-700 transition">
+                            Support Education
+                        </button>
+                        <button class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-gray-900 transition">
+                            View Programs
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-slide" style="background-image: url('./assets/1.jpeg');">
+            <div class="carousel-overlay absolute inset-0"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-white relative z-10 flex items-center min-h-screen">
+                <div class="max-w-3xl">
+                    <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                        Building Sustainable Communities
+                    </h1>
+                    <p class="text-xl mb-8 leading-relaxed opacity-90">
+                        Creating environmental awareness and sustainable solutions through 50+ workshops and community partnerships.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-green-700 transition">
+                            Join Our Mission
+                        </button>
+                        <button class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-gray-900 transition">
+                            Learn Impact
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <button class="carousel-btn prev" onclick="changeSlide(-1)">‹</button>
+        <button class="carousel-btn next" onclick="changeSlide(1)">›</button>
+        
+        <!-- Carousel Indicators -->
+        <div class="carousel-indicators">
+            <div class="indicator active" onclick="goToSlide(0)"></div>
+            <div class="indicator" onclick="goToSlide(1)"></div>
+            <div class="indicator" onclick="goToSlide(2)"></div>
         </div>
     </section>
 
@@ -89,14 +209,14 @@
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-gray-900 mb-4">Who We Are</h2>
                 <div class="w-24 h-1 bg-green-600 mx-auto mb-6"></div>
-                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-                    We make a difference in the lives of people during challenging times. Our mission is to empower underprivileged communities through sustainable development programs.
+                <p class="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    Asha Foundation is a dedicated non-profit organization committed to transforming lives and communities through sustainable development initiatives. We believe that every individual, regardless of their background or circumstances, deserves access to quality education, healthcare, and opportunities for growth. Our comprehensive approach addresses the fundamental challenges faced by underprivileged communities, creating pathways to self-sufficiency and hope. Through collaborative partnerships with local authorities, educational institutions, and community leaders, we work tirelessly to build a more equitable society where everyone can thrive. Our mission extends beyond immediate relief - we focus on creating lasting change that empowers communities to become self-reliant and resilient, ensuring that the positive impact of our work continues for generations to come.
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
                 <div>
-                    <img src="/assets/1.jpeg" 
+                    <img src="./assets/1.jpeg" 
                          alt="Asha Foundation team and community work" class="rounded-lg shadow-lg">
                 </div>
                 <div>
@@ -108,6 +228,35 @@
                     <p class="text-gray-600 leading-relaxed">
                         To empower communities through comprehensive programs in education, healthcare, environmental sustainability, and social welfare, creating pathways to self-sufficiency and hope.
                     </p>
+                </div>
+            </div>
+
+            <!-- Core Values -->
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+                <div class="text-center p-6 bg-gray-50 rounded-lg card-hover">
+                    <div class="text-4xl mb-4 text-blue-600"><i class="fas fa-graduation-cap"></i></div>
+                    <h4 class="text-lg font-semibold text-gray-900 mb-2">Education First</h4>
+                    <p class="text-gray-600 text-sm">Quality education as the foundation for community development</p>
+                </div>
+                <div class="text-center p-6 bg-gray-50 rounded-lg card-hover">
+                    <div class="text-4xl mb-4 text-red-600"><i class="fas fa-heart"></i></div>
+                    <h4 class="text-lg font-semibold text-gray-900 mb-2">Health & Wellness</h4>
+                    <p class="text-gray-600 text-sm">Promoting healthy lives and well-being for all</p>
+                </div>
+                <div class="text-center p-6 bg-gray-50 rounded-lg card-hover">
+                    <div class="text-4xl mb-4 text-green-600"><i class="fas fa-leaf"></i></div>
+                    <h4 class="text-lg font-semibold text-gray-900 mb-2">Environmental Care</h4>
+                    <p class="text-gray-600 text-sm">Sustainable practices for a greener future</p>
+                </div>
+                <div class="text-center p-6 bg-gray-50 rounded-lg card-hover">
+                    <div class="text-4xl mb-4 text-purple-600"><i class="fas fa-handshake"></i></div>
+                    <h4 class="text-lg font-semibold text-gray-900 mb-2">Community Unity</h4>
+                    <p class="text-gray-600 text-sm">Building stronger communities through collaboration</p>
+                </div>
+                <div class="text-center p-6 bg-gray-50 rounded-lg card-hover">
+                    <div class="text-4xl mb-4 text-orange-600"><i class="fas fa-balance-scale"></i></div>
+                    <h4 class="text-lg font-semibold text-gray-900 mb-2">Social Justice</h4>
+                    <p class="text-gray-600 text-sm">Ensuring equal opportunities and fair treatment for all</p>
                 </div>
             </div>
         </div>
@@ -127,10 +276,13 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Education Program -->
                 <div class="bg-white rounded-lg shadow-md card-hover">
-                    <img src="/assets/5.jpeg" 
+                    <img src="./assets/5.jpeg" 
                          alt="Education program with children" class="w-full h-48 object-cover rounded-t-lg">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Education & Scholarships</h3>
+                        <div class="flex items-center mb-3">
+                            <span class="text-2xl mr-3 text-blue-600"><i class="fas fa-book"></i></span>
+                            <h3 class="text-xl font-bold text-gray-900">Education & Scholarships</h3>
+                        </div>
                         <p class="text-gray-600 mb-4">Empowering children and communities through quality education and scholarships for deserving students.</p>
                         <div class="text-green-600 font-semibold">Learn More →</div>
                     </div>
@@ -138,10 +290,13 @@
 
                 <!-- Healthcare Program -->
                 <div class="bg-white rounded-lg shadow-md card-hover">
-                    <img src="/assets/3.jpeg" 
+                    <img src="./assets/3.jpeg" 
                          alt="Healthcare and nutrition support" class="w-full h-48 object-cover rounded-t-lg">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Healthcare & Nutrition</h3>
+                        <div class="flex items-center mb-3">
+                            <span class="text-2xl mr-3 text-red-600"><i class="fas fa-hospital"></i></span>
+                            <h3 class="text-xl font-bold text-gray-900">Healthcare & Nutrition</h3>
+                        </div>
                         <p class="text-gray-600 mb-4">Promoting health and nourishment initiatives for underprivileged communities and families.</p>
                         <div class="text-green-600 font-semibold">Learn More →</div>
                     </div>
@@ -149,10 +304,13 @@
 
                 <!-- Environment Program -->
                 <div class="bg-white rounded-lg shadow-md card-hover">
-                    <img src="/assets/2.jpeg" 
+                    <img src="./assets/2.jpeg" 
                          alt="Environmental initiatives and waste management" class="w-full h-48 object-cover rounded-t-lg">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Environmental Sustainability</h3>
+                        <div class="flex items-center mb-3">
+                            <span class="text-2xl mr-3 text-green-600"><i class="fas fa-globe"></i></span>
+                            <h3 class="text-xl font-bold text-gray-900">Environmental Sustainability</h3>
+                        </div>
                         <p class="text-gray-600 mb-4">Creating sustainable solutions for waste management and environmental conservation.</p>
                         <div class="text-green-600 font-semibold">Learn More →</div>
                     </div>
@@ -160,10 +318,13 @@
 
                 <!-- Vocational Training -->
                 <div class="bg-white rounded-lg shadow-md card-hover">
-                    <img src="/assets/6.jpeg" 
+                    <img src="./assets/6.jpeg" 
                          alt="Vocational training and partnerships" class="w-full h-48 object-cover rounded-t-lg">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Vocational Training</h3>
+                        <div class="flex items-center mb-3">
+                            <span class="text-2xl mr-3 text-orange-600"><i class="fas fa-tools"></i></span>
+                            <h3 class="text-xl font-bold text-gray-900">Vocational Training</h3>
+                        </div>
                         <p class="text-gray-600 mb-4">Providing skills development and self-employment training for youth and women.</p>
                         <div class="text-green-600 font-semibold">Learn More →</div>
                     </div>
@@ -171,10 +332,13 @@
 
                 <!-- Community Welfare -->
                 <div class="bg-white rounded-lg shadow-md card-hover">
-                    <img src="/assets/4.jpeg" 
+                    <img src="./assets/4.jpeg" 
                          alt="Community support and welfare programs" class="w-full h-48 object-cover rounded-t-lg">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Social Welfare</h3>
+                        <div class="flex items-center mb-3">
+                            <span class="text-2xl mr-3 text-purple-600"><i class="fas fa-home"></i></span>
+                            <h3 class="text-xl font-bold text-gray-900">Social Welfare</h3>
+                        </div>
                         <p class="text-gray-600 mb-4">Building stronger communities through support programs and legal guidance.</p>
                         <div class="text-green-600 font-semibold">Learn More →</div>
                     </div>
@@ -182,10 +346,13 @@
 
                 <!-- Awareness Programs -->
                 <div class="bg-white rounded-lg shadow-md card-hover">
-                    <img src="/assets/1.jpeg" 
+                    <img src="./assets/1.jpeg" 
                          alt="Community workshops and awareness programs" class="w-full h-48 object-cover rounded-t-lg">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">Awareness Programs</h3>
+                        <div class="flex items-center mb-3">
+                            <span class="text-2xl mr-3 text-indigo-600"><i class="fas fa-bullhorn"></i></span>
+                            <h3 class="text-xl font-bold text-gray-900">Awareness Programs</h3>
+                        </div>
                         <p class="text-gray-600 mb-4">Organizing workshops, seminars, and training for community awareness and development.</p>
                         <div class="text-green-600 font-semibold">Learn More →</div>
                     </div>
@@ -208,7 +375,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="text-center">
                     <div class="bg-white bg-opacity-20 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-3xl">🎓</span>
+                        <i class="fas fa-graduation-cap text-3xl"></i>
                     </div>
                     <h3 class="text-4xl font-bold mb-2">500+</h3>
                     <p class="text-lg opacity-90">Children Educated</p>
@@ -216,7 +383,7 @@
                 
                 <div class="text-center">
                     <div class="bg-white bg-opacity-20 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-3xl">🌱</span>
+                        <i class="fas fa-seedling text-3xl"></i>
                     </div>
                     <h3 class="text-4xl font-bold mb-2">50+</h3>
                     <p class="text-lg opacity-90">Environmental Workshops</p>
@@ -224,7 +391,7 @@
                 
                 <div class="text-center">
                     <div class="bg-white bg-opacity-20 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-3xl">👥</span>
+                        <i class="fas fa-users text-3xl"></i>
                     </div>
                     <h3 class="text-4xl font-bold mb-2">200+</h3>
                     <p class="text-lg opacity-90">Youth Trained</p>
@@ -232,7 +399,7 @@
                 
                 <div class="text-center">
                     <div class="bg-white bg-opacity-20 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <span class="text-3xl">🤝</span>
+                        <i class="fas fa-handshake text-3xl"></i>
                     </div>
                     <h3 class="text-4xl font-bold mb-2">15+</h3>
                     <p class="text-lg opacity-90">Community Partnerships</p>
@@ -254,72 +421,84 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div class="bg-gray-50 p-8 rounded-lg">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Education & Scholarships</h3>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-book text-3xl mr-4 text-blue-600"></i>
+                        <h3 class="text-2xl font-bold text-gray-900">Education & Scholarships</h3>
+                    </div>
                     <ul class="space-y-3 text-gray-600">
                         <li class="flex items-start">
-                            <span class="text-green-600 mr-3">✓</span>
+                            <i class="fas fa-check text-green-600 mr-3 mt-1"></i>
                             Successfully educated and provided scholarships to 500+ underprivileged children
                         </li>
                         <li class="flex items-start">
-                            <span class="text-green-600 mr-3">✓</span>
+                            <i class="fas fa-check text-green-600 mr-3 mt-1"></i>
                             Established learning centers in multiple communities
                         </li>
                         <li class="flex items-start">
-                            <span class="text-green-600 mr-3">✓</span>
+                            <i class="fas fa-check text-green-600 mr-3 mt-1"></i>
                             Partnered with educational institutions for better outcomes
                         </li>
                     </ul>
                 </div>
 
                 <div class="bg-gray-50 p-8 rounded-lg">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Environmental Impact</h3>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-globe text-3xl mr-4 text-green-600"></i>
+                        <h3 class="text-2xl font-bold text-gray-900">Environmental Impact</h3>
+                    </div>
                     <ul class="space-y-3 text-gray-600">
                         <li class="flex items-start">
-                            <span class="text-green-600 mr-3">✓</span>
+                            <i class="fas fa-check text-green-600 mr-3 mt-1"></i>
                             Conducted 50+ environmental awareness workshops on waste management
                         </li>
                         <li class="flex items-start">
-                            <span class="text-green-600 mr-3">✓</span>
+                            <i class="fas fa-check text-green-600 mr-3 mt-1"></i>
                             Facilitated waste recycling and upcycling initiatives
                         </li>
                         <li class="flex items-start">
-                            <span class="text-green-600 mr-3">✓</span>
+                            <i class="fas fa-check text-green-600 mr-3 mt-1"></i>
                             Supported Swachh Bharat Abhiyan with cleanliness drives
                         </li>
                     </ul>
                 </div>
 
                 <div class="bg-gray-50 p-8 rounded-lg">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Skills Development</h3>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-tools text-3xl mr-4 text-orange-600"></i>
+                        <h3 class="text-2xl font-bold text-gray-900">Skills Development</h3>
+                    </div>
                     <ul class="space-y-3 text-gray-600">
                         <li class="flex items-start">
-                            <span class="text-green-600 mr-3">✓</span>
+                            <i class="fas fa-check text-green-600 mr-3 mt-1"></i>
                             Established vocational training center benefiting 200+ youth
                         </li>
                         <li class="flex items-start">
-                            <span class="text-green-600 mr-3">✓</span>
+                            <i class="fas fa-check text-green-600 mr-3 mt-1"></i>
                             Provided self-employment training programs
                         </li>
                         <li class="flex items-start">
-                            <span class="text-green-600 mr-3">✓</span>
+                            <i class="fas fa-check text-green-600 mr-3 mt-1"></i>
                             Focused on empowering women through skill development
                         </li>
                     </ul>
                 </div>
 
                 <div class="bg-gray-50 p-8 rounded-lg">
-                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Community Partnerships</h3>
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-handshake text-3xl mr-4 text-purple-600"></i>
+                        <h3 class="text-2xl font-bold text-gray-900">Community Partnerships</h3>
+                    </div>
                     <ul class="space-y-3 text-gray-600">
                         <li class="flex items-start">
-                            <span class="text-green-600 mr-3">✓</span>
+                            <i class="fas fa-check text-green-600 mr-3 mt-1"></i>
                             Partnered with local authorities for sanitation improvement
                         </li>
                         <li class="flex items-start">
-                            <span class="text-green-600 mr-3">✓</span>
+                            <i class="fas fa-check text-green-600 mr-3 mt-1"></i>
                             Collaborated with government initiatives like AMRUT
                         </li>
                         <li class="flex items-start">
-                            <span class="text-green-600 mr-3">✓</span>
+                            <i class="fas fa-check text-green-600 mr-3 mt-1"></i>
                             Built strong network of 15+ community partnerships
                         </li>
                     </ul>
@@ -342,7 +521,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="text-center p-8 bg-white rounded-lg card-hover">
                     <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-3xl">🙋‍♀️</span>
+                        <i class="fas fa-hand-holding-heart text-3xl text-green-600"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">Volunteer</h3>
                     <p class="text-gray-600 mb-6">Join our team of dedicated volunteers and directly impact communities through your time and skills.</p>
@@ -353,7 +532,7 @@
 
                 <div class="text-center p-8 bg-white rounded-lg card-hover">
                     <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-3xl">💝</span>
+                        <i class="fas fa-donate text-3xl text-green-600"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">Donate</h3>
                     <p class="text-gray-600 mb-6">Your financial support helps us expand our programs and reach more communities in need.</p>
@@ -364,7 +543,7 @@
 
                 <div class="text-center p-8 bg-white rounded-lg card-hover">
                     <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
-                        <span class="text-3xl">💰</span>
+                        <i class="fas fa-chart-line text-3xl text-green-600"></i>
                     </div>
                     <h3 class="text-2xl font-bold text-gray-900 mb-4">Fundraise</h3>
                     <p class="text-gray-600 mb-6">Organize fundraising events or campaigns to support our cause and spread awareness.</p>
@@ -392,21 +571,21 @@
                     <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
                     <div class="space-y-6">
                         <div class="flex items-center">
-                            <span class="text-2xl mr-4">📧</span>
+                            <i class="fas fa-envelope text-2xl mr-4 text-green-600"></i>
                             <div>
                                 <p class="font-semibold">Email</p>
                                 <p class="opacity-80">ashafdn@outlook.com</p>
                             </div>
                         </div>
                         <div class="flex items-center">
-                            <span class="text-2xl mr-4">📞</span>
+                            <i class="fas fa-phone text-2xl mr-4 text-green-600"></i>
                             <div>
                                 <p class="font-semibold">Phone</p>
                                 <p class="opacity-80">+91 8879398433</p>
                             </div>
                         </div>
                         <div class="flex items-center">
-                            <span class="text-2xl mr-4">🌍</span>
+                            <i class="fas fa-globe text-2xl mr-4 text-green-600"></i>
                             <div>
                                 <p class="font-semibold">Our Mission</p>
                                 <p class="opacity-80">Empowering communities through sustainable development</p>
@@ -441,16 +620,46 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center">
                 <div class="flex items-center justify-center space-x-3 mb-4">
-                    <img src="/assets/logo.jpeg" alt="Asha Foundation Logo" class="h-8 w-auto">
+                    <img src="./assets/logo.jpeg" alt="Asha Foundation Logo" class="h-8 w-auto">
                     <h3 class="text-2xl font-bold text-green-600">Asha Foundation</h3>
                 </div>
                 <p class="text-gray-400 mb-4">Purpose Driven Aspirations - Empowering communities through hope and sustainable development</p>
-                <p class="text-gray-500 text-sm">© 2025 Asha Foundation. Devloped by Asermedia. All rights reserved.</p>
+                <p class="text-gray-500 text-sm">© 2024 Asha Foundation. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
+        // Carousel functionality
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const indicators = document.querySelectorAll('.indicator');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+            });
+            indicators.forEach((indicator, i) => {
+                indicator.classList.toggle('active', i === index);
+            });
+        }
+
+        function changeSlide(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            showSlide(currentSlide);
+        }
+
+        // Auto-advance carousel
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
