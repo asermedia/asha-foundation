@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - Asha Foundation</title>
+    <meta name="description" content="Meet the dedicated team behind Asha Foundation's mission to empower communities">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .logo-img {
+            height: 50px;
+            width: auto;
+        }
+        .team-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .team-photo {
+            width: 300px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <img src="./assets/logo.jpeg" alt="Asha Foundation Logo" class="logo-img">
+                    <h1 class="text-2xl font-bold text-blue-800">Asha Foundation</h1>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-green-600 transition">Home</a>
+                    <div class="relative group">
+                        <a href="#about" class="text-gray-700 hover:text-green-600 transition">About</a>
+                        <div class="absolute top-full left-0 mt-1 w-64 bg-white shadow-lg rounded-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="py-2">
+                                <a href="vision-mission.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-green-600 transition">Vision, Mission & Strategy</a>
+                                <a href="teams.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-green-600 transition">Our Team</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="index.html#programs" class="text-gray-700 hover:text-green-600 transition">Programs</a>
+                    <div class="relative group">
+                        <a href="index.html#impact" class="text-gray-700 hover:text-green-600 transition">Impact</a>
+                        <div class="absolute top-full left-0 mt-1 w-64 bg-white shadow-lg rounded-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="py-2">
+                                <a href="research-reports.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-green-600 transition">Research and Reports</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="index.html#achievements" class="text-gray-700 hover:text-green-600 transition">Achievements</a>
+                    <a href="index.html#involved" class="text-gray-700 hover:text-green-600 transition">Get Involved</a>
+                    <a href="index.html#contact" class="text-gray-700 hover:text-green-600 transition">Contact</a>
+                </div>
+                <button class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition">
+                    Donate Now
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-blue-800 to-green-600 text-white py-20 pt-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-5xl font-bold mb-6">Our Team</h1>
+            <p class="text-xl max-w-3xl mx-auto opacity-90">
+                Meet the dedicated leaders who drive our mission to empower communities and create lasting change
+            </p>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Leadership Team</h2>
+                <div class="w-24 h-1 bg-green-600 mx-auto mb-6"></div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Our foundation is led by compassionate leaders who are committed to making a meaningful difference in the lives of underprivileged communities.
+                </p>
+            </div>
+
+            <!-- Founder Section -->
+            <div class="flex justify-center">
+                <div class="bg-gray-50 rounded-lg p-8 team-card max-w-lg">
+                    <div class="text-center">
+                        <img src="./assets/founder.jpeg" 
+                             alt="Neha & Sua Devi - Founder and President" 
+                             class="team-photo mx-auto mb-6 shadow-lg">
+                        
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Neha & Sua Devi</h3>
+                        <p class="text-lg text-green-600 font-semibold mb-4">Founder & President</p>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow-sm">
+                            <p class="text-gray-600 leading-relaxed mb-4">
+                                With unwavering dedication and a compassionate heart, Neha & Sua Devi founded Asha Foundation with the vision of creating sustainable change in underprivileged communities.
+                            </p>
+                            <p class="text-gray-600 leading-relaxed">
+                                Their leadership has been instrumental in establishing programs that have transformed the lives of hundreds of children and families, focusing on education, healthcare, and community empowerment.
+                            </p>
+                        </div>
+                        
+                        <div class="mt-6 flex justify-center space-x-4">
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-heart text-red-500 mr-2"></i>
+                                <span class="text-sm">500+ Lives Impacted</span>
+                            </div>
+                            <div class="flex items-center text-gray-600">
+                                <i class="fas fa-award text-yellow-500 mr-2"></i>
+                                <span class="text-sm">Community Leader</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mission Statement -->
+            <div class="mt-16 bg-gradient-to-r from-green-50 to-blue-50 p-8 rounded-lg">
+                <div class="text-center">
+                    <i class="fas fa-quote-left text-3xl text-green-600 mb-4"></i>
+                    <blockquote class="text-xl text-gray-700 italic mb-6 max-w-4xl mx-auto">
+                        "Our mission is not just to provide aid, but to empower communities to become self-reliant and create a sustainable future for generations to come. Every child deserves hope, every family deserves dignity, and every community deserves the opportunity to thrive."
+                    </blockquote>
+                    <cite class="text-gray-600 font-semibold">- Neha & Sua Devi, Founder & President</cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Our Leadership Values</h2>
+                <div class="w-24 h-1 bg-green-600 mx-auto mb-6"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6 bg-white rounded-lg shadow-sm">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-handshake text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Compassionate Leadership</h3>
+                    <p class="text-gray-600">Leading with empathy and understanding, ensuring every decision considers the human impact.</p>
+                </div>
+
+                <div class="text-center p-6 bg-white rounded-lg shadow-sm">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-seedling text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Sustainable Growth</h3>
+                    <p class="text-gray-600">Fostering long-term solutions that create lasting change and community self-sufficiency.</p>
+                </div>
+
+                <div class="text-center p-6 bg-white rounded-lg shadow-sm">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-users text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Community First</h3>
+                    <p class="text-gray-600">Prioritizing community needs and involving local stakeholders in every initiative.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-gradient-to-r from-green-600 to-blue-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-6">Join Our Mission</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90">
+                Be part of our growing community of changemakers and help us create a better future for underprivileged communities.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-white text-green-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition">
+                    Become a Volunteer
+                </button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-white hover:text-green-600 transition">
+                    Support Our Cause
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-3 mb-4">
+                    <img src="./assets/logo.jpeg" alt="Asha Foundation Logo" class="h-8 w-auto">
+                    <h3 class="text-2xl font-bold text-green-600">Asha Foundation</h3>
+                </div>
+                <p class="text-gray-400 mb-4">Purpose Driven Aspirations - Empowering communities through hope and sustainable development</p>
+                <p class="text-gray-500 text-sm">© 2024 Asha Foundation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
