@@ -31,6 +31,35 @@
             transform: translateY(-5px);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
         }
+ 
+        .timeline-item {
+            position: relative;
+            padding-left: 3rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0.75rem;
+            top: 0;
+            bottom: -2rem;
+            width: 2px;
+            background: linear-gradient(to bottom, #3b82f6, #10b981);
+        }
+        .timeline-item:last-child::before {
+            bottom: 0;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: 0.25rem;
+            top: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #3b82f6, #10b981);
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+        }
+    </style>
     </style>
 </head>
 <body class="bg-gray-50">
@@ -50,13 +79,18 @@
                             <div class="py-2">
                                 <a href="vision-mission.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-green-600 transition">Vision, Mission & Strategy</a>
                                 <a href="teams.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-green-600 transition">Our Team</a>
-
                             </div>
                         </div>
                     </div>
                     <a href="index.html#programs" class="text-gray-700 hover:text-green-600 transition">Programs</a>
-                    <a href="index.html#impact" class="text-gray-700 hover:text-green-600 transition">Impact</a>
-                    <a href="index.html#achievements" class="text-gray-700 hover:text-green-600 transition">Achievements</a>
+                    <div class="relative group">
+                        <a href="index.html#impact" class="text-gray-700 hover:text-green-600 transition">Impact</a>
+                        <div class="absolute top-full left-0 mt-1 w-64 bg-white shadow-lg rounded-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="py-2">
+                                <a href="research-reports.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-green-600 transition">Research and Reports</a>
+                            </div>
+                        </div>
+                    </div>                    <a href="index.html#achievements" class="text-gray-700 hover:text-green-600 transition">Achievements</a>
                     <a href="index.html#involved" class="text-gray-700 hover:text-green-600 transition">Get Involved</a>
                     <a href="index.html#contact" class="text-gray-700 hover:text-green-600 transition">Contact</a>
                 </div>
@@ -237,6 +271,175 @@
                     <p class="text-gray-600">
                         Ensuring all programs are designed for long-term sustainability and community ownership.
                     </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Timeline Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="flex items-center justify-center mb-6">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-clock text-3xl text-indigo-600"></i>
+                    </div>
+                    <h2 class="text-4xl font-bold text-gray-900">Our Journey</h2>
+                </div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    A 5-year timeline showcasing our foundation's growth and milestones from 2020 to 2025
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-8">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold text-blue-800 mb-2">2020 – Founding Year</h3>
+                            <ul class="text-gray-600 space-y-2">
+                                <li class="flex items-start"><i class="fas fa-heart text-red-500 mr-2 mt-1"></i>Asha Foundation established in memory of your mother.</li>
+                                <li class="flex items-start"><i class="fas fa-file-contract text-blue-500 mr-2 mt-1"></i>Initial trust deed registration & constitution.</li>
+                                <li class="flex items-start"><i class="fas fa-bullseye text-green-500 mr-2 mt-1"></i>Defined broad focus: wellness, dignity, education, and circularity.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold text-green-800 mb-2">2021 – Laying the Groundwork</h3>
+                            <ul class="text-gray-600 space-y-2">
+                                <li class="flex items-start"><i class="fas fa-hands-helping text-purple-500 mr-2 mt-1"></i>Informal charitable work begins (support to families, food & medical aid).</li>
+                                <li class="flex items-start"><i class="fas fa-handshake text-orange-500 mr-2 mt-1"></i>Relationship-building with grassroots stakeholders.</li>
+                                <li class="flex items-start"><i class="fas fa-search text-indigo-500 mr-2 mt-1"></i>Community needs assessment in Gulalwadi and surrounding areas.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold text-purple-800 mb-2">2022 – Healing & Grounding</h3>
+                            <ul class="text-gray-600 space-y-2">
+                                <li class="flex items-start"><i class="fas fa-leaf text-green-500 mr-2 mt-1"></i>Focus on personal reflection and emotional wellness work.</li>
+                                <li class="flex items-start"><i class="fas fa-lightbulb text-yellow-500 mr-2 mt-1"></i>Exploration of long-term impact areas (waste, women, well-being).</li>
+                                <li class="flex items-start"><i class="fas fa-spa text-pink-500 mr-2 mt-1"></i>Engagement with spiritual, pranic, and social healing practices.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h3 class="text-xl font-bold text-orange-800 mb-2">2023 – Exploration & Alignment</h3>
+                            <ul class="text-gray-600 space-y-2">
+                                <li class="flex items-start"><i class="fas fa-users text-blue-500 mr-2 mt-1"></i>Alignment with like-minded individuals and NGOs.</li>
+                                <li class="flex items-start"><i class="fas fa-community text-green-500 mr-2 mt-1"></i>Informal support to community-based activities.</li>
+                                <li class="flex items-start"><i class="fas fa-comments text-purple-500 mr-2 mt-1"></i>Internal visioning and capacity building through conversations, collaborations.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="bg-white p-6 rounded-lg shadow-md border-2 border-blue-200">
+                            <h3 class="text-xl font-bold text-red-800 mb-2">2024–25 – Structure & First Projects</h3>
+                            <ul class="text-gray-600 space-y-2">
+                                <li class="flex items-start"><i class="fas fa-registered text-blue-500 mr-2 mt-1"></i>Registration on NGO Darpan.</li>
+                                <li class="flex items-start"><i class="fas fa-recycle text-green-500 mr-2 mt-1"></i>Initiation of flagship collaboration: Reimagining Waste with Aasra Welfare Association.</li>
+                                <li class="flex items-start"><i class="fas fa-id-card text-purple-500 mr-2 mt-1"></i>Developed identity assets (address, email, phone, digital drafts).</li>
+                                <li class="flex items-start"><i class="fas fa-user-tie text-orange-500 mr-2 mt-1"></i>Appointment of CA (Mansi Maniar) and CS (Sudhir Uncle).</li>
+                                <li class="flex items-start"><i class="fas fa-clipboard-check text-indigo-500 mr-2 mt-1"></i>Drafted compliance plan (80G/12A/CSR-1).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Roadmap Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <div class="flex items-center justify-center mb-6">
+                    <div class="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-seedling text-3xl text-emerald-600"></i>
+                    </div>
+                    <h2 class="text-4xl font-bold text-gray-900">Vision Roadmap 2025–2030</h2>
+                </div>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Our ambitious 5-year plan to expand impact and create lasting change in communities
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg card-hover">
+                    <div class="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-rocket text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">2025-26: Formalisation & Pilots</h3>
+                    <ul class="text-gray-600 space-y-2 text-sm">
+                        <li>• Complete all legal registrations (80G, 12A, CSR-1)</li>
+                        <li>• Build core team & advisory network</li>
+                        <li>• Launch Reimagining Waste Phase II in Mumbai</li>
+                        <li>• Develop website & visual storytelling formats</li>
+                        <li>• Initiate partnerships with civic bodies and corporates</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg card-hover">
+                    <div class="w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-cogs text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">2026-27: Program Design & Replication</h3>
+                    <ul class="text-gray-600 space-y-2 text-sm">
+                        <li>• Develop 2–3 thematic verticals:</li>
+                        <li class="ml-4">◦ Waste & Circularity</li>
+                        <li class="ml-4">◦ Women & Skilling</li>
+                        <li class="ml-4">◦ Child Wellness & Art</li>
+                        <li>• Publish first impact report</li>
+                        <li>• Expand to 2–3 more communities</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg card-hover">
+                    <div class="w-12 h-12 bg-purple-500 text-white rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-building text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">2027-28: Institutional Growth</h3>
+                    <ul class="text-gray-600 space-y-2 text-sm">
+                        <li>• Establish Community Resource Hub or physical centre</li>
+                        <li>• Collaborate with schools, BMC wards, hospitals or MRFs</li>
+                        <li>• Introduce volunteer and internship fellowships</li>
+                        <li>• Apply for large-scale CSR or philanthropic grants</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-lg card-hover">
+                    <div class="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-globe text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">2028-29: State & National Influence</h3>
+                    <ul class="text-gray-600 space-y-2 text-sm">
+                        <li>• Pilot projects in another city (e.g. Pune, Indore)</li>
+                        <li>• Host an exhibition or conference on "Circular Dignity"</li>
+                        <li>• Begin policy engagement with urban waste and women's livelihoods</li>
+                    </ul>
+                </div>
+
+                <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 rounded-lg card-hover md:col-span-2">
+                    <div class="w-12 h-12 bg-indigo-500 text-white rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-crown text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">2029-30: Legacy & Leadership</h3>
+                    <ul class="text-gray-600 space-y-2 text-sm">
+                        <li>• Publish a commemorative 10-year Storybook</li>
+                        <li>• Establish corpus for long-term sustainability</li>
+                        <li>• Mentor grassroots leaders, SHGs, or youth</li>
+                        <li>• Explore a spin-off enterprise or social innovation platform</li>
+                    </ul>
                 </div>
             </div>
         </div>
