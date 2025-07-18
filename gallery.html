@@ -1,0 +1,313 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Asha Foundation</title>
+    <meta name="description" content="Meet the dedicated team behind Asha Foundation's mission to empower communities">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .logo-img {
+            height: 50px;
+            width: auto;
+        }
+        .team-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .team-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .team-photo {
+            width: 300px;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-3">
+                    <img src="./assets/logo.jpeg" alt="Asha Foundation Logo" class="logo-img">
+                    <h1 class="text-2xl font-bold text-blue-800">Asha Foundation</h1>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-gray-700 hover:text-green-600 transition">Home</a>
+                    <div class="relative group">
+                        <a href="#about" class="text-gray-700 hover:text-green-600 transition">About</a>
+                        <div class="absolute top-full left-0 mt-1 w-64 bg-white shadow-lg rounded-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="py-2">
+                                <a href="vision-mission.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-green-600 transition">Vision, Mission & Strategy</a>
+                                <a href="teams.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-green-600 transition">Our Team</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="index.html#programs" class="text-gray-700 hover:text-green-600 transition">Programs</a>
+                    <div class="relative group">
+                        <a href="index.html#impact" class="text-gray-700 hover:text-green-600 transition">Impact</a>
+                        <div class="absolute top-full left-0 mt-1 w-64 bg-white shadow-lg rounded-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <div class="py-2">
+                                <a href="research-reports.html" class="block px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-green-600 transition">Research and Reports</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="index.html#achievements" class="text-gray-700 hover:text-green-600 transition">Achievements</a>
+                    <a href="index.html#involved" class="text-gray-700 hover:text-green-600 transition">Get Involved</a>
+                    <a href="index.html#contact" class="text-gray-700 hover:text-green-600 transition">Contact</a>
+                </div>
+                <button class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition">
+                    Donate Now
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+         <section class="bg-gradient-to-r from-green-600 to-green-800 text-white py-20 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">Our Impact in Action</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+                Witness the transformative moments that define our mission - from healthcare initiatives to 
+                environmental awareness, every photo tells a story of hope and positive change.
+            </p>
+            <div class="flex justify-center space-x-4 text-green-200">
+                <div class="text-center">
+                    <i class="fas fa-camera text-3xl mb-2"></i>
+                    <p class="text-sm">Captured Moments</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-heart text-3xl mb-2"></i>
+                    <p class="text-sm">Lives Touched</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-hands-helping text-3xl mb-2"></i>
+                    <p class="text-sm">Communities Served</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+   <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Blood Donation Drive -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover-scale">
+                    <img 
+                        src="./assets/g5.jpeg" 
+                        alt="Blood Donation Certificate Presentation" 
+                        class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 right-4 text-white">
+                            <h3 class="text-lg font-semibold mb-1">Blood Donation Drive</h3>
+                            <p class="text-sm">Recognizing community heroes who save lives through blood donation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Healthcare Team -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover-scale">
+                    <img 
+                        src="./assets/g7.jpeg" 
+                        alt="Healthcare Team with Asha Foundation Banner" 
+                        class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 right-4 text-white">
+                            <h3 class="text-lg font-semibold mb-1">Healthcare Partnership</h3>
+                            <p class="text-sm">Collaborating with healthcare professionals to serve our community</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hospital Visit -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover-scale">
+                    <img 
+                        src="./assets/g6.jpeg" 
+                        alt="Hospital Visit and Support" 
+                        class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 right-4 text-white">
+                            <h3 class="text-lg font-semibold mb-1">Patient Care Support</h3>
+                            <p class="text-sm">Providing comfort and support to patients and their families</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medical Care -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover-scale">
+                    <img 
+                        src="./assets/g8.jpeg" 
+                        alt="Medical Care and Assistance" 
+                        class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 right-4 text-white">
+                            <h3 class="text-lg font-semibold mb-1">Medical Assistance</h3>
+                            <p class="text-sm">Ensuring quality medical care and emotional support for all</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hospital Ward -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover-scale">
+                    <img 
+                        src="./assets/g5.jpeg" 
+                        alt="Hospital Ward Support" 
+                        class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 right-4 text-white">
+                            <h3 class="text-lg font-semibold mb-1">Hospital Ward Care</h3>
+                            <p class="text-sm">Supporting patients and families during critical care moments</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medical Certificate -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover-scale">
+                    <img 
+                        src="./assets/g9.jpeg" 
+                        alt="Medical Certificate Presentation" 
+                        class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 right-4 text-white">
+                            <h3 class="text-lg font-semibold mb-1">Healthcare Recognition</h3>
+                            <p class="text-sm">Celebrating achievements in community healthcare service</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Waste Management Training -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover-scale">
+                    <img 
+                        src="./assets/g2.jpeg" 
+                        alt="Waste Management Training Session" 
+                        class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 right-4 text-white">
+                            <h3 class="text-lg font-semibold mb-1">Environmental Education</h3>
+                            <p class="text-sm">Training communities on sustainable waste management practices</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Meeting Discussion -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover-scale">
+                    <img 
+                        src="./assets/g3.jpeg" 
+                        alt="Strategic Planning Meeting" 
+                        class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 right-4 text-white">
+                            <h3 class="text-lg font-semibold mb-1">Strategic Planning</h3>
+                            <p class="text-sm">Collaborative discussions to enhance our community impact</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leadership Development -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover-scale">
+                    <img 
+                        src="./assets/g10.jpeg" 
+                        alt="Leadership Development Session" 
+                        class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div class="absolute bottom-4 left-4 right-4 text-white">
+                            <h3 class="text-lg font-semibold mb-1">Leadership Development</h3>
+                            <p class="text-sm">Empowering future leaders through skill development programs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Placeholder for Future Images -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover-scale bg-gradient-to-br from-green-50 to-green-100 border-2 border-dashed border-green-300">
+                    <div class="w-full h-64 flex items-center justify-center">
+                        <div class="text-center text-green-600">
+                            <i class="fas fa-plus text-4xl mb-4"></i>
+                            <p class="text-sm font-medium">More Stories Coming Soon</p>
+                            <p class="text-xs mt-1">Community Impact</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Placeholder for Future Images -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover-scale bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-dashed border-blue-300">
+                    <div class="w-full h-64 flex items-center justify-center">
+                        <div class="text-center text-blue-600">
+                            <i class="fas fa-heart text-4xl mb-4"></i>
+                            <p class="text-sm font-medium">Compassionate Care</p>
+                            <p class="text-xs mt-1">Future Initiatives</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Placeholder for Future Images -->
+                <div class="group relative overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover-scale bg-gradient-to-br from-purple-50 to-purple-100 border-2 border-dashed border-purple-300">
+                    <div class="w-full h-64 flex items-center justify-center">
+                        <div class="text-center text-purple-600">
+                            <i class="fas fa-seedling text-4xl mb-4"></i>
+                            <p class="text-sm font-medium">Sustainable Future</p>
+                            <p class="text-xs mt-1">Environmental Projects</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+      <!-- Call to Action -->
+    <section class="bg-green-600 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Want to be part of our story?</h2>
+            <p class="text-xl mb-8">Join us in creating more moments of impact and positive change in our community.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contact" class="bg-white text-green-600 px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
+                    Get Involved
+                </a>
+                <a href="#donate" class="border-2 border-white text-white px-8 py-3 rounded-md font-semibold hover:bg-white hover:text-green-600 transition-colors">
+                    Donate Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-3 mb-4">
+                    <img src="./assets/logo.jpeg" alt="Asha Foundation Logo" class="h-8 w-auto">
+                    <h3 class="text-2xl font-bold text-green-600">Asha Foundation</h3>
+                </div>
+                <p class="text-gray-400 mb-4">Purpose Driven Aspirations - Empowering communities through hope and sustainable development</p>
+                <p class="text-gray-500 text-sm">© 2024 Asha Foundation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
